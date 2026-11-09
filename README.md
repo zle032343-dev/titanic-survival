@@ -1,4 +1,4 @@
-\# Titanic Survival Prediction
+# Titanic Survival Prediction
 
 
 
@@ -6,7 +6,7 @@ This project uses logistic regression to predict whether Titanic passengers surv
 
 
 
-\## 1. Clone the repository
+## 1. Clone the repository
 
 
 
@@ -32,11 +32,11 @@ Run the rest of the commands from the `titanic-survival` folder.
 
 
 
-\## 2. Download the data
+## 2. Download the data
 
 
 
-Download the Titanic data from \[Kaggle](https://www.kaggle.com/competitions/titanic/data) and extract the ZIP file.
+Download the Titanic data from [Kaggle](https://www.kaggle.com/competitions/titanic/data) and extract the ZIP file.
 
 Create a `data` folder inside `src`, then create a `predictions` folder inside `data`. Copy `train.csv` and `test.csv` into `src/data/`. 
 
@@ -54,7 +54,7 @@ src/data/test.csv
 
 
 
-\## 3. Run the Python model
+## 3. Run the Python model
 
 
 
@@ -86,7 +86,7 @@ The script prints the training accuracy and saves predictions for all 418 test p
 
 
 
-\## 4. Run the R model
+## 4. Run the R model
 
 
 
@@ -118,7 +118,7 @@ The script prints the training accuracy and saves predictions for all 418 test p
 
 
 
-\## 5. Model results
+## 5. Model results
 
 
 
