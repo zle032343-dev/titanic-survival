@@ -6,6 +6,50 @@ This project uses logistic regression to predict whether Titanic passengers surv
 
 
 
+Each script loads the data, checks for missing values, and fills them using medians from the training set. It then fits the model, prints the training accuracy in the terminal, and saves predictions for the test passengers.
+
+
+
+Step 2 explains how to download the dataset from Kaggle and where to place the files.
+
+
+
+\## Repository structure
+
+
+
+```text
+
+titanic-survival/
+
+├── .gitignore
+
+├── README.md
+
+└── src/
+
+&#x20;   ├── data/                 # Create locally for the Kaggle CSV files
+
+&#x20;   ├── python/
+
+&#x20;   │   ├── Dockerfile
+
+&#x20;   │   ├── requirements.txt
+
+&#x20;   │   └── model.py
+
+&#x20;   └── r/
+
+&#x20;       ├── Dockerfile
+
+&#x20;       ├── install\_packages.R
+
+&#x20;       └── model.R
+
+```
+
+
+
 \## 1. Clone the repository
 
 
