@@ -130,3 +130,14 @@ The R model had a training accuracy of 80.02% and a Kaggle public score of 0.758
 
 Since `test.csv` does not include the actual survival outcomes, the public scores come from submitting each model’s predictions to Kaggle.
 
+## Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| `Cannot connect to the Docker daemon` | Start Docker Desktop and wait for it to finish starting. Run `docker info` to check the connection. |
+| `docker: command not found` or Docker is not recognized | Install Docker Desktop, then close and reopen the terminal. |
+| The script cannot find `/data/train.csv` or `/data/test.csv` | Put both CSV files directly in `src/data/` and run the commands from the `titanic-survival` folder. |
+| `bind source path does not exist` | Check that both `src/data/` and `src/data/predictions/` exist. Run the commands from the `titanic-survival` folder. |
+| `Permission denied` when saving predictions | Close the prediction CSV file in Excel, then run the container again. |
+| Kaggle download returns 403 | Sign in and accept the competition rules before downloading. |
+| `Expand-Archive` cannot find `titanic.zip` | Change the command to use the location where you saved the ZIP, or extract it into `src/data/` using File Explorer. |
