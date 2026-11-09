@@ -55,18 +55,31 @@ Run the rest of the commands from the `titanic-survival` folder.
 
 ## 2. Download the data
 
-Download the Titanic data from [Kaggle](https://www.kaggle.com/competitions/titanic/data) and extract the ZIP file.
+1. Go to [Kaggle](https://www.kaggle.com/competitions/titanic/data) and sign in.
+2. Click **Join Competition** and accept the rules (Kaggle blocks the download until you do).
+3. Click **Download All**. This saves `titanic.zip`, usually in your Downloads folder.
+4. Create the data folders and unzip the file into `src/data`.
 
-Create a `data` folder inside `src`, then create a `predictions` folder inside `data`. Copy `train.csv` and `test.csv` into `src/data/`. 
+Windows PowerShell:
 
-The file paths should be:
+```powershell
+mkdir src\data\predictions
+Expand-Archive -Path "$HOME\Downloads\titanic.zip" -DestinationPath src\data -Force
+```
+
+macOS / Linux:
+
+```bash
+mkdir -p src/data/predictions
+unzip ~/Downloads/titanic.zip -d src/data
+```
+
+When you are done, these should exist (`gender_submission.csv` is not used):
 
 ```text
-
 src/data/train.csv
-
 src/data/test.csv
-
+src/data/predictions/        (empty folder; the models write their output here)
 ```
 
 ## 3. Run the Python model
