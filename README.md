@@ -35,7 +35,7 @@ titanic-survival/
 | Docker Desktop | building and running the containers | https://docs.docker.com/get-docker/ |
 | Free Kaggle account | downloading the data | https://www.kaggle.com |
 
-You do not need Python or R installed; everything runs inside Docker. 
+The Python package versions are listed in `src/python/requirements.txt`. The R model uses the `stats` package included with R 4.4.2. You do not need Python or R installed; everything runs inside Docker. 
 
 ## 1. Clone the repository
 
@@ -124,9 +124,20 @@ The script prints the training accuracy and saves predictions for all 418 test p
 
 ## 5. Model results
 
-The Python model had a training accuracy of 79.91% and a Kaggle public score of 0.75598.
+Both models were trained on the 891 passengers in `train.csv`. The Python model had a training accuracy of 79.91%, and the R model had a training accuracy of 80.02%.
 
-The R model had a training accuracy of 80.02% and a Kaggle public score of 0.75837.
+Each model generated predictions for the 418 passengers in `test.csv`. Since this file does not include the actual survival outcomes, the prediction files were submitted to Kaggle for evaluation.
 
-Since `test.csv` does not include the actual survival outcomes, the public scores come from submitting each model’s predictions to Kaggle.
+Kaggle compares the predictions with the hidden survival outcomes and reports the proportion predicted correctly. The Python model received a public score of 0.75598 (75.60%), and the R model received 0.75837 (75.84%).
 
+The two models had similar results, with lower accuracy on the Kaggle evaluation data than on the training data.
+
+## Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| Docker cannot connect to the daemon | Open Docker Desktop and wait for it to finish starting, then run the command again. |
+| Docker cannot find the Dockerfile | Run the build command from the `titanic-survival` folder. Check that the file is named `Dockerfile`, without a `.txt` extension. |
+| The container cannot find the CSV files | Check that `train.csv` and `test.csv` are directly inside `src/data/` and that the terminal is in the `titanic-survival` folder. |
+| `bind source path does not exist` | Create both `src/data/` and `src/data/predictions/` before running the container. |
+| Permission is denied when saving predictions | If the prediction file is open in Excel, close it and run the container again. |
